@@ -1,9 +1,24 @@
-const percentageTip = document.QuerySelector(['data-percentage'])
-const totalBill = document.QuerySelector(['data-total-bill'])
-const isGo = document.QuerySelector(['data-isgo'])
-
-const finalBill = document.QuerySelector(['data-bill-final'])
 
 
 
-console.log(totalBill)
+
+function calculateTip() {
+  var billAmount = document.getElementById("billAmount").value;
+  var tipAmount = document.getElementById("tipAmount").value;
+
+
+  if (billAmount =="" || tipAmount == 0) {
+    alert("Please enter values");
+    return;
+  }
+
+  var total = (billAmount * tipAmount) + billAmount
+
+  document.getElementById("finalBill").innerhtml = total;
+}
+
+
+document.getElementById("calculate").onclick = function() {
+  calculateTip();
+
+};
